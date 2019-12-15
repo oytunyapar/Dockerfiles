@@ -4,6 +4,7 @@ RUN set -x; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
 		make \
+                ninja-build \
 		cmake \
                 libboost-all-dev \
                 googletest
