@@ -1,4 +1,4 @@
-FROM gcc:9.2
+FROM gcc:latest
 
 RUN set -x; \
 	apt-get update; \
