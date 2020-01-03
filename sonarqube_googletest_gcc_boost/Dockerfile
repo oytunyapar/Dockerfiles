@@ -17,7 +17,9 @@ RUN set -x \
     && cd /usr/src/googletest/googlemock \
     && cmake CMakeLists.txt \
     && make \
-    && cp *.a /usr/lib
+    && cp *.a /usr/lib \
+    && cp -r /usr/src/googletest/googletest/include/gtest /usr/include/ \
+    && cp -r /usr/src/googletest/googlemock/include/gmock /usr/include/
 
 RUN set -eux; \
 	apt-get update; \
@@ -173,3 +175,5 @@ RUN set -x \
     cp ./sonar-cxx-plugin-0.9.7.jar sonarqube:/opt/sonarqube/extensions/plugins/sonar-cxx-plugin-0.9.7.jar
 
 VOLUME "$SONARQUBE_HOME/data"
+
+CMD tail -f /dev/null
